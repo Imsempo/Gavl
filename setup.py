@@ -11,7 +11,7 @@ setup(
     description="Framework to launch a genetic algorithm with chromosomes with variable length.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/IgnacioGarrido/Gavl.git",
+    url="https://github.com/Imsempo/Gavl.git",
     packages=find_packages(),
     install_requires=["numpy"],
     classifiers=[
