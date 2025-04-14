@@ -1,9 +1,9 @@
-import setuptools
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setuptools.setup(
+setup(
     name="Gavl-Ignacio-Garrido-Botella", # Replace with your own username
     version="1.0.1",
     author="Ignacio Garrido Botella",
@@ -12,7 +12,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/IgnacioGarrido/Gavl.git",
-    packages=["Gavl"],
+    packages=find_packages(),
     install_requires=["numpy"],
     classifiers=[
         "Programming Language :: Python :: 3",
