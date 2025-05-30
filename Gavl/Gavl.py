@@ -79,6 +79,7 @@ class Gavl(Population):
         # GA info:
         self.best_fitness_per_generation = []  # Attribute that holds a list of the best fitness in each generation.
         # Execution:
+        self.best_individual_per_generation = []
         self.show_progress = 1  # If show_progress = 1 it will be printed the the progress of the genetic algorithm (the generation).
         self._generation_count = 0  # Number of generations of the current population
 
@@ -243,6 +244,7 @@ class Gavl(Population):
             # Start the algorithm
             self._generation_count = 0  # Start the generation counter
             self.best_fitness_per_generation = []  # Empty list
+            self.best_individuals = []
             # Create the population
             self._Population__generate_population()
             self._Population__calculate_fitness_and_sort()
@@ -270,6 +272,7 @@ class Gavl(Population):
                 self.__update_termination_criteria_args()  # Update the termination criteria arguments
                 self.best_fitness_per_generation.append(
                     self.best_individual().fitness_value)  # Get the best fitness value per generation
+                self.best_individual_per_generation.append(self.best_individual().chromosome)
             self._Population__calculate_fitness_and_sort()  # Calculate the fitness and sort the population
             return self.best_individual()
 
@@ -450,6 +453,19 @@ class Gavl(Population):
                 'You must make the optimization (call the method .optimize()) before you can call this method.')
         return self.best_fitness_per_generation
 
+
+    def historic_individual(self):
+        """ This method returns the best fitness value in each generation.
+
+        :return:
+            * :bfv: (list of floats) This method returns a list with the best fitness value in each generation.
+        """
+        if not self.best_individual_per_generation:
+            raise ValueError(
+                'You must make the optimization (call the method .optimize()) before you can call this method.')
+        return self.best_individual_per_generation
+
+
     def get_results(self):
         """ This method is used to get the results of the optimization process, once it has finished.
 
@@ -477,4 +493,5 @@ class Gavl(Population):
         best_individual = self.best_individual()
         population = self.population
         historic_fitness = self.historic_fitness()
-        return best_individual, population, historic_fitness
+        historic_individual = self.historic_individual()
+        return best_individual, population, historic_fitness,historic_individual
