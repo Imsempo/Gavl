@@ -6,9 +6,9 @@ This repository contains a Python framework to optimize a genetic algorithm base
 
 ## How to use:
 
-  1. Download the files:
+  1. Install with PIP:
 ```shell
-  git clone https://github.com/IgnacioGarrido/Gavl.git
+  pip install https://github.com/Imsempo/Gavl/archive/refs/heads/master.zip
 ```
 
   2. Import the Gavl class from the file Gavl.py. Note that this is the main and only class needed to execute the genetic algorithm. All the hyperparameters should be passed to an object of this class.
