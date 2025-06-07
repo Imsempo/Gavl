@@ -503,7 +503,7 @@ ga.set_hyperparameter('show_progress',
 
 best_individual = ga.optimize()  # Launch optimization
 
-best_individual, population, historic_fitness = ga.get_results()  # Get other results
+best_individual, population, historic_fitness, historic_individuals  = ga.get_results()  # Get other results
 
 ```
 
