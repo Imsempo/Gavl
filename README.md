@@ -13,7 +13,7 @@ This repository contains a Python framework to optimize a genetic algorithm base
 
   2. Import the Gavl class from the file Gavl.py. Note that this is the main and only class needed to execute the genetic algorithm. All the hyperparameters should be passed to an object of this class.
 ```python
-  import Gavl
+  from Gavl import Gavl
 ```
 
   3. Create an instance of Gavl():
